@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17130f">
+  <meta name="description" content="Discover flame-grilled favourites and the warmth of African hospitality at Ashaki Grill in Nairobi.">
+  <title>Ashaki Grill | Fire, Flavour & Good Company</title>
+  <style>
+    :root {
+      --ink: #17130f;
+      --paper: #fffaf2;
+      --cream: #f4eadb;
+      --muted: #74695e;
+      --red: #c83b25;
+      --orange: #ef8a35;
+      --line: rgba(23,19,15,.13);
+      --radius: 18px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; object-fit: cover; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .topline { background: var(--red); color: #fff; text-align: center; padding: 8px 16px; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,250,242,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.04em; font-size: 1.25rem; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; background: var(--red); color: white; border-radius: 50% 50% 50% 12%; font-family: Georgia, serif; font-size: 1.4rem; transform: rotate(-5deg); }
+    .brand span:last-child { display: block; line-height: 1.1; }
+    .brand small { display: block; font-size: .61rem; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; margin-top: 5px; color: var(--muted); }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: .91rem; font-weight: 650; }
+    .nav-links a:not(.button):hover { color: var(--red); }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 999px; padding: 13px 21px; font-weight: 800; font-size: .9rem; transition: transform .2s, background .2s; cursor: pointer; }
+    .button:hover { transform: translateY(-2px); }
+    .button-dark { background: var(--ink); color: white; }
+    .button-red { background: var(--red); color: white; }
+    .button-light { background: white; color: var(--ink); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; padding: 9px 12px; border-radius: 10px; font-size: 1.2rem; }
+    .hero { padding: 42px 0 72px; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 48px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--red); font-weight: 850; font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 28px; height: 2px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: clamp(3.2rem, 6.4vw, 6.4rem); letter-spacing: -.065em; line-height: .98; margin: 22px 0; max-width: 650px; }
+    h1 em { color: var(--red); font-weight: 500; }
+    .hero-copy { max-width: 520px; color: var(--muted); font-size: 1.07rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-note { display: flex; align-items: center; gap: 13px; margin-top: 35px; color: var(--muted); font-size: .85rem; }
+    .avatar-stack { display: flex; }
+    .avatar-stack span { display: grid; place-items: center; width: 32px; height: 32px; margin-left: -7px; border: 2px solid var(--paper); border-radius: 50%; background: var(--cream); font-size: .75rem; }
+    .avatar-stack span:first-child { margin-left: 0; background: #e8c8a1; }
+    .avatar-stack span:nth-child(2) { background: #cf8c62; }
+    .avatar-stack span:nth-child(3) { background: #9f6d4d; }
+    .hero-visual { position: relative; min-height: 540px; }
+    .hero-photo { position: absolute; inset: 0 28px 24px 0; height: calc(100% - 24px); border-radius: 48% 48% 20px 20px; object-fit: cover; box-shadow: 0 24px 70px rgba(45,24,10,.17); }
+    .photo-label { position: absolute; right: 0; bottom: 0; width: 190px; background: var(--orange); padding: 20px; border-radius: 16px; transform: rotate(3deg); box-shadow: 0 12px 35px rgba(45,24,10,.15); }
+    .photo-label strong { display: block; font-family: Georgia, serif; font-size: 1.35rem; line-height: 1.15; }
+    .photo-label small { display: block; margin-top: 8px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+    .floating-tag { position: absolute; top: 48px; left: -25px; background: white; border: 1px solid var(--line); border-radius: 999px; padding: 12px 16px; font-size: .8rem; font-weight: 800; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+    .section { padding: 88px 0; }
+    .section-cream { background: var(--cream); }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
+    .section-heading h2, .about-copy h2, .visit-copy h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.4rem, 4vw, 4rem); letter-spacing: -.055em; line-height: 1.02; margin: 12px 0 0; }
+    .section-heading p { color: var(--muted); max-width: 390px; margin-bottom: 3px; }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .menu-card { background: var(--paper); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(23,19,15,.07); }
+    .menu-card img { height: 230px; transition: transform .45s; }
+    .menu-card:hover img { transform: scale(1.04); }
+    .menu-card .card-content { padding: 22px; }
+    .menu-card h3 { font-family: Georgia, serif; font-size: 1.5rem; margin-bottom: 8px; }
+    .menu-card p { color: var(--muted); font-size: .92rem; margin-bottom: 0; }
+    .menu-footnote { margin-top: 18px; color: var(--muted); font-size: .8rem; }
+    .about-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 65px; align-items: center; }
+    .about-photos { display: grid; grid-template-columns: 1fr .78fr; align-items: end; gap: 14px; }
+    .about-photos img:first-child { height: 390px; border-radius: 180px 180px 16px 16px; }
+    .about-photos img:last-child { height: 275px; border-radius: 16px; margin-bottom: 30px; }
+    .about-copy p { color: var(--muted); margin: 22px 0; }
+    .values { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 28px 0; }
+    .value { border-top: 1px solid var(--line); padding-top: 14px; font-weight: 800; }
+    .value small { display: block; color: var(--muted); font-weight: 500; margin-top: 4px; }
+    .gallery-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; grid-template-rows: 190px 190px; gap: 14px; }
+    .gallery-grid img { height: 100%; border-radius: 14px; }
+    .gallery-grid img:first-child { grid-row: span 2; }
+    .gallery-grid img:last-child { grid-column: span 2; }
+    .visit { background: var(--ink); color: white; padding: 76px 0; }
+    .visit-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 60px; align-items: center; }
+    .visit .eyebrow { color: var(--orange); }
+    .visit-copy p { color: #c9beb3; max-width: 480px; margin: 22px 0 28px; }
+    .visit-details { border: 1px solid rgba(255,255,255,.17); border-radius: var(--radius); padding: 26px; }
+    .detail { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.13); }
+    .detail:last-child { border-bottom: 0; }
+    .detail-icon { color: var(--orange); font-size: 1.2rem; }
+    .detail strong { display: block; }
+    .detail span { color: #c9beb3; font-size: .9rem; }
+    footer { padding: 26px 0; background: #100d0a; color: #c9beb3; font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    .footer-links { display: flex; gap: 20px; }
+    @media (max-width: 850px) {
+      .nav-links { gap: 16px; }
+      .nav-links a:not(.button) { display: none; }
+      .hero-grid, .about-grid, .visit-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 32px; }
+      .hero-visual { min-height: 470px; max-width: 620px; width: 100%; margin: 0 auto; }
+      .about-grid { gap: 42px; }
+      .about-photos { max-width: 620px; }
+      .menu-grid { grid-template-columns: 1fr 1fr; }
+      .menu-card:last-child { grid-column: span 2; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .nav { min-height: 68px; }
+      .nav-links { gap: 8px; }
+      .nav-links .button { padding: 10px 13px; font-size: .78rem; }
+      .brand { font-size: 1.05rem; }
+      .brand-mark { width: 36px; height: 36px; }
+      .hero { padding-bottom: 48px; }
+      h1 { font-size: clamp(3rem, 15vw, 4.5rem); }
+      .hero-visual { min-height: 390px; }
+      .hero-photo { inset-right: 15px; }
+      .floating-tag { left: -5px; top: 25px; }
+      .photo-label { width: 155px; padding: 15px; }
+      .section { padding: 62px 0; }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: 16px; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-card:last-child { grid-column: auto; }
+      .menu-card img { height: 220px; }
+      .about-photos img:first-child { height: 300px; }
+      .about-photos img:last-child { height: 220px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 170px 140px 140px; }
+      .gallery-grid img:first-child { grid-row: span 2; }
+      .gallery-grid img:last-child { grid-column: span 1; }
+      .visit { padding: 62px 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline">A taste of home, cooked over fire · Nairobi, Kenya</div>
+  <header>
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Ashaki Grill home">
+        <span class="brand-mark">A</span>
+        <span>ASHAKI GRILL<small>Fire · Flavour · Together</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#menu">Our Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#gallery">Gallery</a>
+        <a class="button button-dark" href="#visit">Find Us <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Welcome to Ashaki Grill</span>
+          <h1>Good food.<br><em>Great company.</em></h1>
+          <p class="hero-copy">Gather around the grill for bold flavours, comforting African favourites and the kind of meal that turns an ordinary day into a good memory.</p>
+          <div class="hero-actions">
+            <a class="button button-red" href="#menu">Explore the menu <span aria-hidden="true">→</span></a>
+            <a class="button button-dark" href="#visit">Plan your visit</a>
+          </div>
+          <div class="hero-note">
+            <div class="avatar-stack" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span></div>
+            <span>Made for sharing, savouring and coming back for more.</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1100&q=85" alt="Freshly grilled food served ready to share">
+          <div class="floating-tag">🔥 Straight from the grill</div>
+          <div class="photo-label"><strong>Flavour that brings us together.</strong><small>Welcome in · Stay awhile</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="menu">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">Something delicious</span><h2>Made to make<br>you hungry.</h2></div>
+          <p>From smoky grill favourites to satisfying local classics, there is always a reason to pull up a chair.</p>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=85" alt="Juicy grilled meat with fresh herbs">
+            <div class="card-content"><h3>From the Grill</h3><p>Smoky, savoury and cooked with care. Perfect for sharing with friends and family.</p></div>
+          </article>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85" alt="Golden roasted chicken served with sides">
+            <div class="card-content"><h3>House Favourites</h3><p>Comforting plates, generous portions and familiar flavours worth returning for.</p></div>
+          </article>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85" alt="Fresh colourful salad and vegetables">
+            <div class="card-content"><h3>Fresh on the Side</h3><p>Fresh greens and tasty sides to bring balance, colour and extra goodness to your meal.</p></div>
+          </article>
+        </div>
+        <p class="menu-footnote">Menu categories shown as a website concept. Confirm actual dishes, availability and prices with Ashaki Grill before publishing.</p>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="container about-grid">
+        <div class="about-photos">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=85" alt="Grilled food prepared for a shared meal">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=700&q=85" alt="Friends enjoying a meal together">
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">The Ashaki feeling</span>
+          <h2>Come for the food.<br>Stay for the feeling.</h2>
+          <p>Great meals are about more than what is on the plate. They are about the conversations, the laughter and the people gathered around the table.</p>
+          <p>At Ashaki Grill, the idea is simple: bring people together over satisfying food and warm hospitality. Whether it is a quick lunch or a catch-up with friends, make yourself at home.</p>
+          <div class="values">
+            <div class="value">Bold flavour<small>Food worth slowing down for</small></div>
+            <div class="value">Warm welcome<small>Good company starts here</small></div>
+          </div>
+          <a class="button button-dark" href="#visit">Come say hello <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">A little taste of the vibe</span><h2>Good food looks<br>good on you.</h2></div>
+          <p>A glimpse of the food, the atmosphere and the moments that make eating together special.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=85" alt="Grilled meal close-up" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85" alt="Fresh meal with colourful ingredients" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=85" alt="Food being prepared for a meal" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1000&q=85" alt="People sharing a meal together" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="container visit-grid">
+        <div class="visit-copy">
+          <span class="eyebrow">Your table is waiting</span>
+          <h2>Let's make it<br>a good meal.</h2>
+          <p>Planning lunch, meeting friends or just craving something delicious? Find Ashaki Grill and come hungry.</p>
+          <a class="button button-red" href="https://www.google.com/maps/search/?api=1&query=Ashaki+Grill+Nairobi" target="_blank" rel="noopener">Get directions <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="visit-details">
+          <div class="detail"><span class="detail-icon" aria-hidden="true">⌖</span><div><strong>Find us</strong><span>Ashaki Grill, Nairobi, Kenya<br>Check the map for the latest location details.</span></div></div>
+          <div class="detail"><span class="detail-icon" aria-hidden="true">◷</span><div><strong>Opening hours</strong><span>Please check with the restaurant for current opening hours.</span></div></div>
+          <div class="detail"><span class="detail-icon" aria-hidden="true">☎</span><div><strong>Get in touch</strong><span>Contact details can be added once verified with the restaurant.</span></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark">A</span><span>ASHAKI GRILL<small style="color:#c9beb3">Fire · Flavour · Together</small></span></a>
+      <span>© <span id="year"></span> Ashaki Grill. Website concept.</span>
+      <div class="footer-links"><a href="#menu">Menu</a><a href="#story">Our story</a><a href="#visit">Visit</a></div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
